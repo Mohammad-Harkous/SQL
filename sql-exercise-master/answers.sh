@@ -5,6 +5,9 @@ SELECT name FROM students;
 SELECT * FROM students
 WHERE Age > 30;
 
+SELECT name from students
+WHERE Gender = "F" and Age > 30;
+
 SELECT Points FROM students
 WHERE name  = "Alex";
 
@@ -33,6 +36,32 @@ INSERT INTO gradutes (name, Age, Gender, Points,Graduation)
 VALUES("Layal", 18, "F", 350, "08/09/2018");
 
 DELETE FROM students where id =4;
+
+
+CREATE TABLE "employees_companies" (
+	"ID"	INTEGER NOT NULL,
+	"EmployeeName"	TEXT NOT NULL,
+	"CompanyName"	TEXT NOT NULL,
+	"CompanyDate"	TEXT NOT NULL,
+	PRIMARY KEY("ID" AUTOINCREMENT)
+);
+
+SELECT employees.name , companies.Date
+FROM employees
+INNER JOIN companies
+on companies.Name = employees.Company
+WHERE companies.Date < 2000;
+
+SELECT  companies.name, employees.Role
+FROM employees
+INNER JOIN companies
+on companies.Name = employees.Company
+WHERE employees.Role = "Graphic Designer";
+
+
+
+
+
 
 
 
