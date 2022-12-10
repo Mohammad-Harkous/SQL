@@ -59,6 +59,29 @@ on companies.Name = employees.Company
 WHERE employees.Role = "Graphic Designer";
 
 
+SELECT name, Points
+from students
+where points in (select max(points)
+from students
+);
+
+SELECT AVG(Points) as "The average of points"
+FROM students;
+
+SELECT count(*) as "Number of students"
+from students
+where points in (select max(points)
+from students
+);
+
+SELECT name 
+FROM students
+WHERE name LIKE "%s%";
+
+SELECT *
+FROM students
+GROUP BY name
+ORDER BY min(Points);
 
 
 
